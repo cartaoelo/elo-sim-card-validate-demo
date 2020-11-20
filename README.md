@@ -1,6 +1,6 @@
 # Coloque seus dados de acesso
 
-Coloque o seu `client_id` e seu `secret` [src/configs/api.ts](https://github.com/apiplaybook/elo-simcard-validation-demo/src/configs/api.ts)
+Coloque o seu `client_id` e seu `secret` [src/configs/api.ts](https://github.com/apiplaybook/elo-simcard-validation-demo/blob/master/src/configs/api.ts)
 
 # Getting Started with Create React App
 
