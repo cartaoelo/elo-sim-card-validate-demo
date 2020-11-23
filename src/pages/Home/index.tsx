@@ -25,6 +25,8 @@ import { useHistory } from 'react-router-dom'
 import { VALIDATESIMCARD } from '../../constants/routes'
 import { useForm } from 'react-hook-form'
 
+import copy from 'copy-to-clipboard'
+
 interface FormData {
 	username: string
 	password: string
@@ -89,14 +91,6 @@ const Home = () => {
 			state: stateLogin,
 			setState: setStateLogin
 		})
-
-		// if (typeof eloRes === undefined) {
-		// 	alert('a'))
-		// 	return iziToast.error({
-		// 		title: 'Erro',
-		// 		message: 'Veja se você preencheu todos os campos!'
-		// 	})
-		// }
 
 		const { salt: eloSalt } = eloRes.data.createLoginSalt
 
@@ -197,9 +191,30 @@ const Home = () => {
 		})
 
 		if (resSocialJSON !== null) {
-			return iziToast.error({
+			iziToast.error({
 				title: 'Erro',
 				message: 'Não há nenhum usuário associado a essa rede social!'
+			})
+
+			return iziToast.info({
+				title: 'Token ID',
+				message: `Para associar esse usuário à rede Google, copie seu token id`,
+				buttons: [
+					[
+						'<button>Copiar</button>',
+						(instance, toast) => {
+							copy(tokenId, { debug: true })
+							instance.hide(
+								{
+									transitionOut: 'fadeOutUp'
+								},
+								toast,
+								'buttonName'
+							)
+						},
+						true
+					]
+				]
 			})
 		}
 		const {
