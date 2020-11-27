@@ -4,7 +4,6 @@ import { args } from '../../configs/api'
 import { callAPI } from '../../services/graphQL/api'
 
 import { createChallenge, generateBcryptPassword } from '../../services/Challenge'
-import errorHandler from '../../services/Error/errorHandler'
 import callApiErrorHandler from '../../services/Error/callApiErrorHandler'
 import { LOGIN, LOGIN_SALT, SOCIAL_LOGIN } from '../../services/graphQL/Mutations'
 
