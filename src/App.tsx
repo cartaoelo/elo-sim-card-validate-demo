@@ -8,7 +8,6 @@ import Home from './pages/Home'
 import AppContext, { AppContextDefaultValue } from './store'
 
 import AppStyled from './styles/App.styled'
-import BackgroundContainerStyled from './styles/Background'
 import SimCard from './pages/SimCard'
 
 function App() {
@@ -17,11 +16,9 @@ function App() {
 			<AppStyled className="App">
 				<Router>
 					<Switch>
-						{/* <BackgroundContainerStyled> */}
 						<Route exact component={Home} path={HOME} />
 						<PrivateRoute exact component={SimCard} path={VALIDATESIMCARD} />
 						<Route component={() => <Redirect to={HOME} />} />
-						{/* </BackgroundContainerStyled> */}
 					</Switch>
 				</Router>
 			</AppStyled>

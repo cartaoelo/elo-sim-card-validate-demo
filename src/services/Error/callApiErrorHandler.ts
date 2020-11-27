@@ -28,7 +28,6 @@ const callApiErrorHandler = async ({
 		})
 		return false
 	}
-
 	if (res.data === null) {
 		if (
 			typeof res.errors[0].message === undefined ||
