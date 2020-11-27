@@ -68,9 +68,12 @@ const SimCard = () => {
 			setState: setStatePhone
 		})
 		if (eloRes.data !== null) {
-			console.log(eloRes.data) //confere se precisa msm do json parse
-			const { tag, swapMin, swapMax } = JSON.parse(eloRes.data).simSwap
-			setStateModal({ modalShow: true, modalText: tagTranslate(tag) })
+			const { simSwap } = eloRes.data
+			setStateModal({ modalShow: true, modalText: JSON.stringify(simSwap, null, 2) })
+			return iziToast.success({
+				title: 'Sucesso',
+				message: `Última alteração: ${tagTranslate(simSwap.tag)}.`
+			})
 		}
 
 		return ''
