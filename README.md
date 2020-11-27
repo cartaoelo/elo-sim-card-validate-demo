@@ -1,14 +1,12 @@
-# **elo-simcard-validation-demo**
+# **elo-sim-card-validate-demo**
 
 ## O que é esse projeto?
 
-Este projeto servirá como um exemplo de como consumir e utilizar a API "Elo Valida Sim Card".
----
+## Este projeto servirá como um exemplo de como consumir e utilizar a API "Elo Valida Sim Card".
 
 ## Ambiente / Tecnologias
 
 O projeto foi criado utilizando [`React`](https://pt-br.reactjs.org/) juntamente com [TypeScript](https://www.typescriptlang.org/), uma linguagem que engloba as versões mais atuais do JavaScript/ES6+ e adiciona uma camada de tipagem que o JavaScript não possui por si só.
-
 
 > **Atenção:** Esta demo foi criado com a ferramenta [Create React App](https://create-react-app.dev/) para ajudar na criação do projeto. Ela fornece uma base de código em `React` evitando _boilerplate code_. Portanto o código conta com algumas partes que foram geradas, packages instalados mas não utilizados, e algumas features dentro do projeto que podem não ser totalmente utilizadas.
 
@@ -27,6 +25,7 @@ Serão somente listados os _packages_ mais importantes para o processo:
 ## Como rodar o app
 
 Requisitos:
+
 - node.js 8 ou versão superior
 - yarn (opcional, mas recomendado)
 
@@ -44,13 +43,14 @@ yarn start
 Todas as configurações de chamadas para a API Elo podem ser encontradas no arquivo [`api.ts`](./src/configs/api.ts).
 
 ### **Configuração inicial**
-Altere os campos de *client_id*, *secret* e, se disponível, o id da sua aplicação Google disponível.
 
->Obs: caso não tiver um id na plataforma Google Cloud, siga os passos presentes na documentação de [login social](./src/docs/Social.md)
+Altere os campos de _client_id_, _secret_ e, se disponível, o id da sua aplicação Google disponível.
 
-Realize login na página [login](./src/pages/Home/index.tsx) com seu usuário Elo ou Google, caso haja algum erro, a aplicação devolverá com a descrição do erro. Os dados do login, como o *access token*, serão salvos localmente no seu navegador para facilitar integrações.
+> Obs: caso não tiver um id na plataforma Google Cloud, siga os passos presentes na documentação de [login social](./src/docs/Social.md)
 
-### **Elo Valida Sim Card - Identificar alterações recentes de *SIM card* realizadas em um número de celular**
+Realize login na página [login](./src/pages/Home/index.tsx) com seu usuário Elo ou Google, caso haja algum erro, a aplicação devolverá com a descrição do erro. Os dados do login, como o _access token_, serão salvos localmente no seu navegador para facilitar integrações.
+
+### **Elo Valida Sim Card - Identificar alterações recentes de _SIM card_ realizadas em um número de celular**
 
 Após realizar login, insira o número de celular que deseja verificar as alterações, o retorno da API será exibida por um modal.
 
