@@ -152,7 +152,10 @@ const Home = () => {
 			})
 		}, 2000)
 		setTimeout(() => setStateLogin({ ...stateLogin, ended: true }), 4500)
-		setTimeout(() => history.push(VALIDATESIMCARD), 5000)
+		setTimeout(() => {
+			history.push(VALIDATESIMCARD)
+			window.location.reload()
+		}, 5000)
 
 		setStateLogin({
 			...stateLogin,
